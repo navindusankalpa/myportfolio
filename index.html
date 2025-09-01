@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex, noimageindex">
     <title>Navindu's Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Custom CSS for animations and effects */
@@ -613,7 +614,7 @@
                 </div>
                 
                 <div class="md:w-1/2">
-                    <form action="https://formspree.io/f/mblakkko" method="POST" class="space-y-6">
+                    <form id="contact-form" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name <span class="text-red-500">*</span></label>
@@ -768,5 +769,21 @@
                 }, index * 200);
             });
         });
+
+        // EmailJS configuration
+        emailjs.init("KnBCzcEIpuWZGGkhi");
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            emailjs.sendForm('service_0rezb6c', 'template_d46i7vl', this)
+                .then(function() {
+                    alert('Message sent successfully!');
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    alert('Failed to send message. Please try again.');
+                });
+        });
     </script>
+</body>
 </html>
