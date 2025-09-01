@@ -776,13 +776,35 @@
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
 
-            emailjs.sendForm('service_0rezb6c', 'template_d46i7vl', this)
-                .then(function() {
-                    alert('Message sent successfully!');
-                    document.getElementById('contact-form').reset();
-                }, function(error) {
-                    alert('Failed to send message. Please try again.');
-                });
+            // Fetch current time from RapidAPI
+            fetch("https://world-time2.p.rapidapi.com/timezone/Asia/Colombo", {
+                method: "GET",
+                headers: {
+                    "X-RapidAPI-Key": "c90b9e7646mshd2f731e3927b297p18fe66jsn782409d9393f",
+                    "X-RapidAPI-Host": "world-time2.p.rapidapi.com"
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Get the current time string
+                const currentTime = data.datetime || data.currentDateTime || "";
+
+                // Prepare EmailJS parameters
+                const form = document.getElementById('contact-form');
+                const formData = new FormData(form);
+                formData.append('time', currentTime);
+
+                emailjs.send('service_0rezb6c', 'template_d46i7vl', Object.fromEntries(formData))
+                    .then(function() {
+                        alert('Message sent successfully!');
+                        form.reset();
+                    }, function(error) {
+                        alert('Failed to send message. Please try again.');
+                    });
+            })
+            .catch(() => {
+                alert('Failed to get current time. Please try again.');
+            });
         });
     </script>
 </body>
