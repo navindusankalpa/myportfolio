@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, noimageindex">
     <title>Navindu's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -59,6 +62,12 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
         }
+
+        h1, h2, h3, h4 {
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans antialiased">
@@ -76,11 +85,8 @@
                     <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
                     <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
                     <!-- Mailto and Call buttons -->
-                    <a href="mailto:navindukarunarathne1@gmail.com" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300 flex items-center">
-                        <i class="fas fa-envelope mr-2"></i> Email Me
-                    </a>
-                    <a href="tel:+94775012808" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300 flex items-center">
-                        <i class="fas fa-phone-alt mr-2"></i> Call Me
+                    <a href="src/smartliving.html" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-medium transition duration-300 flex items-center">
+                        SmartLiving
                     </a>
                 </div>
                 <div class="md:hidden">
@@ -330,11 +336,11 @@
                     <span class="text-gray-700">JavaScript</span>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
-                    <i class="fab fa-node-js text-green-500 text-4xl mb-2"></i>
-                    <span class="text-gray-700">Node.js</span>
+                    <img src="images/powerbi.svg" alt="Power bi logo" class="h-10 w-10 mb-2 object-contain" />
+                    <span class="text-gray-700">Power BI</span>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
-                    <i class="fab fa-python text-blue-600 text-4xl mb-2"></i>
+                    <img src="https://s3.dualstack.us-east-2.amazonaws.com/pythondotorg-assets/media/files/python-logo-only.svg" alt="python logo" class="h-10 w-10 mb-2 object-contain" />
                     <span class="text-gray-700">Python</span>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
@@ -342,16 +348,28 @@
                     <span class="text-gray-700">SQL</span>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
-                    <i class="fab fa-git-alt text-orange-500 text-4xl mb-2"></i>
+                    <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" alt="Azure logo" class="h-10 w-10 mb-2 object-contain" />
                     <span class="text-gray-700">Git</span>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
-                    <i class="fab fa-azure text-orange-400 text-4xl mb-2"></i>
+                    <img src="images/azure.svg" alt="Azure logo" class="h-10 w-10 mb-2 object-contain" />
                     <span class="text-gray-700">Azure</span>
                 </div>
                 <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
-                    <i class="fas fa-server text-teal-500 text-4xl mb-2"></i>
-                    <span class="text-gray-700">Linux</span>
+                    <img src="images/pandas.svg" alt="pandas logo" class="h-10 w-10 mb-2 object-contain" />
+                    <span class="text-gray-700">Pandas</span>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
+                    <img src="images/seaborn.svg" alt="seaborn logo" class="h-10 w-10 mb-2 object-contain" />
+                    <span class="text-gray-700">Seaborn</span>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
+                    <img src="images/colab.png" alt="colab logo" class="h-10 w-10 mb-2 object-contain" />
+                    <span class="text-gray-700">Colab</span>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-sm flex flex-col items-center justify-center hover:shadow-md transition duration-300">
+                    <img src="images/scikit learn.svg" alt="scikit learn logo" class="h-10 w-10 mb-2 object-contain" />
+                    <span class="text-gray-700">Scikit Learn</span>
                 </div>
             </div>
         </div>
@@ -367,29 +385,25 @@
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 fade-in delay-1">
                 <!-- Project 1 -->
-                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover transition duration-300 border border-gray-100">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                             alt="Project 1" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover transition duration-300 border border-gray-100 flex flex-col">
+                    <div class="flex items-center justify-center h-48 bg-gray-100">
+                        <img src="images/smart_living_logo.png" 
+                             alt="Project 1" class="object-contain w-40 h-40 transition duration-500 hover:scale-105">
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex-1 flex flex-col">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">E-Commerce Platform</h3>
-                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">Web Dev</span>
+                            <h3 class="text-xl font-semibold text-gray-800">SmartLiving</h3>
+                            <span class="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full">Mobile + IoT</span>
                         </div>
-                        <p class="text-gray-600 mb-4">A full-stack e-commerce platform with user authentication, product catalog, and payment integration.</p>
+                        <p class="text-gray-600 mb-4">An easy way to control and monitor your home with your phone.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">React</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Node.js</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">MongoDB</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Stripe API</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Java</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Arduino</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Firebase</span>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                        <div class="flex justify-between items-center mt-auto">
+                            <a href="src/smartliving.html" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
                                 View Project <i class="fas fa-external-link-alt ml-1 text-sm"></i>
-                            </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700">
-                                <i class="fab fa-github text-xl"></i>
                             </a>
                         </div>
                     </div>
@@ -398,27 +412,22 @@
                 <!-- Project 2 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover transition duration-300 border border-gray-100">
                     <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=765&q=80" 
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.f6ved8wranJjaO8g0qDStgHaEK%3Fpid%3DApi&f=1&ipt=a75ef5e7d0e3ab658171ac2682f790401f8d4aa825d2c51cbc94d345e062a743&ipo=images" 
                              alt="Project 2" class="w-full h-full object-cover transition duration-500 hover:scale-105">
                     </div>
                     <div class="p-6">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">Health Analytics Dashboard</h3>
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Data Science</span>
+                            <h3 class="text-xl font-semibold text-gray-800">Riyasewana Ad Watcher</h3>
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full">Mobile</span>
                         </div>
-                        <p class="text-gray-600 mb-4">Interactive dashboard for visualizing health metrics with predictive analytics capabilities.</p>
+                        <p class="text-gray-600 mb-4">Get notified when your favourite car is added to Riyasewana without hustle.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
                             <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Python</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Pandas</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Scikit-learn</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Plotly</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Telegram</span>
                         </div>
                         <div class="flex justify-between items-center">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                            <a href="https://github.com/navindusankalpa/RiyasewanaAdWatcher.git" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
                                 View Project <i class="fas fa-external-link-alt ml-1 text-sm"></i>
-                            </a>
-                            <a href="#" class="text-gray-500 hover:text-gray-700">
-                                <i class="fab fa-github text-xl"></i>
                             </a>
                         </div>
                     </div>
@@ -426,24 +435,22 @@
                 
                 <!-- Project 3 -->
                 <div class="bg-white rounded-lg overflow-hidden shadow-lg card-hover transition duration-300 border border-gray-100">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
-                             alt="Project 3" class="w-full h-full object-cover transition duration-500 hover:scale-105">
+                    <div class="flex items-center justify-center h-48 bg-gray-100">
+                        <img src="images/512.png" 
+                             alt="Project 3" class="object-contain w-40 h-40 transition duration-500 hover:scale-105">
                     </div>
-                    <div class="p-6">
+                    <div class="p-6 flex-1 flex flex-col">
                         <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-semibold text-gray-800">Campus Navigation App</h3>
-                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Mobile</span>
+                            <h3 class="text-xl font-semibold text-gray-800">Cool-Cleaner</h3>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Web</span>
                         </div>
-                        <p class="text-gray-600 mb-4">Mobile application for university students to navigate campus buildings with AR features.</p>
+                        <p class="text-gray-600 mb-4">Wipes history and cookies after you visit a web page from your browser.</p>
                         <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Flutter</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Firebase</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">ARKit</span>
-                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">Google Maps API</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">HTML</span>
+                            <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">JavaScript</span>
                         </div>
-                        <div class="flex justify-between items-center">
-                            <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                        <div class="flex justify-between items-center mt-auto">
+                            <a href="https://github.com/navindusankalpa/Cool-Cleaner.git" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
                                 View Project <i class="fas fa-external-link-alt ml-1 text-sm"></i>
                             </a>
                             <a href="#" class="text-gray-500 hover:text-gray-700">
@@ -452,13 +459,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-12 fade-in delay-2">
-                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300">
-                    View All Projects
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </a>
             </div>
         </div>
     </section>
@@ -489,11 +489,11 @@
                             <i class="fas fa-graduation-cap text-xl"></i>
                         </div>
                         <div class="md:w-1/2 md:pl-12">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>Mathematics - A</li>
-                                    <li>Health & Physical Education - A</li>
-                                    <li>Science - B</li>
+                            <div class="bg-white p-6 rounded-lg shadow-md texxt-center">
+                                <ul class="list-none pl-5 text-gray-600 space-y-2">
+                                    <li>👉 Mathematics - A</li>
+                                    <li>👉 Health & Physical Education - A</li>
+                                    <li>👉 Science - B</li>
                                 </ul>
                             </div>
                         </div>
@@ -501,11 +501,11 @@
                     
                     <div class="relative flex flex-col md:flex-row items-center">
                         <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 order-2 md:order-1 md:text-left">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>ICT - B</li>
-                                    <li>Agriculture Technology - C</li>
-                                    <li>Chinese Language - S</li>
+                            <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                                <ul class="list-none pl-5 text-gray-600 space-y-2">
+                                    <li>👉 ICT - B</li>
+                                    <li>👉 Agriculture Technology - C</li>
+                                    <li>👉 Chinese Language - S</li>
                                 </ul>
                             </div>
                         </div>
@@ -524,28 +524,85 @@
                     <div class="relative flex flex-col md:flex-row items-center">
                         <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
                             <h3 class="text-xl font-semibold text-gray-800">Higher National Diploma in Computing & Software Engineering</h3>
-                            <p class="text-purple-600 mb-2">ICBT Campus - Gampaha</p>
+                            <p class="text-purple-600 mb-2">Cardiff Metropolitan University - UK<br><i>ICBT Campus</i></p>
                             <p class="text-gray-600">2022 - 2024</p>
                             <p class="text-gray-600">Merit</p>
                         </div>
                         <div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-purple-600 text-white z-10">
-                            <i class="fas fa-flask text-xl"></i>
+                            <i class="fas fa-graduation-cap text-xl"></i>
                         </div>
                         <div class="md:w-1/2 md:pl-12">
                             <div class="bg-white p-6 rounded-lg shadow-md">
-                                <ul class="list-disc pl-5 text-gray-600 space-y-2">
-                                    <li>Service Oriented Computing</li>
-                                    <li>Data Structure and Algorithms</li>
-                                    <li>Web Application Development</li>
-                                    <li>Computer Networks</li>
+                                <ul class="list-none pl-5 text-gray-600 space-y-2">
+                                    <li>👉 Service Oriented Computing</li>
+                                    <li>👉 Data Structure and Algorithms</li>
+                                    <li>👉 Web Application Development</li>
+                                    <li>👉 Computer Networks</li>
                                 </ul>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 order-2 md:order-1 md:text-center">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <ul class="list-none pl-5 text-gray-600 space-y-2">
+                                    <li>👉 Blockchain Fundamentals</li>
+                                    <li>👉 Computational Intalligence</li>
+                                    <li>👉 Data Visualization Grammar and Idioms</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-blue-600 text-white z-10 order-1">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 order-3">
+                            <h3 class="text-xl font-semibold text-gray-800">BSc. Hons in Data Science</h3>
+                            <p class="text-blue-600 mb-2">Cardiff Metropolitan University - UK<br><i>ICBT Campus</i></p>
+                            <p class="text-gray-600">2024 - Present</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Achievements Section -->
+<section id="achievements" class="py-16 bg-gray-50 relative overflow-hidden">
+    <!-- Centered, faint SVG background -->
+    <!-- <img src="images/blackbelt.svg"
+         alt="Black Belt Background"
+         class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2/3 max-w-xl opacity-10 pointer-events-none z-0" /> -->
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 flex flex-col items-center">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Achievements</h2>
+            <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+        </div>
+        <div class="bg-white bg-opacity-0 rounded-lg shadow-md p-8 fade-in delay-1 w-full max-w-2xl mx-auto bg-[url('images/blackbelt.svg')] bg-center bg-no-repeat bg-contain">
+            <ul class="list-none pl-0 text-gray-700 space-y-4 text-center">
+                <li>
+                    <span class="font-semibold text-indigo-700">Black belt (1st Dan)</span> – Nihon Den Karate-Do Showakan
+                </li>
+                <li>
+                    <span class="font-semibold text-indigo-700">SLKF Western Province Shotokan Karate Championship</span><br>
+                    Best Eight – male kata 10,9,8,7 kyu event.
+                </li>
+                <li>
+                    <span class="font-semibold text-indigo-700">Kensho International Open Karate Championship – 2017</span><br>
+                    3rd place – male kata 3,2,1 kyu event.
+                </li>
+                <li>
+                    <span class="font-semibold text-indigo-700">Showakan All Island Karate Championship – 2015</span><br>
+                    1st place – male kumite 9,8 kyu event.
+                </li>
+                <li>
+                    <span class="font-semibold text-indigo-700">Showakan Annual Karate Championship</span><br>
+                    2nd place – male kumite 3,2,1 kyu event.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-16 bg-white">
@@ -597,16 +654,16 @@
                     <div class="mt-8">
                         <h4 class="text-lg font-medium text-gray-800 mb-4">Follow Me</h4>
                         <div class="flex space-x-4">
-                            <a href="#" class="bg-gray-100 hover:bg-indigo-100 text-indigo-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <a href="https://linkedin.com/in/navindu-karunarathne-707250216" class="bg-gray-100 hover:bg-indigo-100 text-indigo-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="bg-gray-100 hover:bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <a href="https://facebook.com/navindu.karunarathne/" class="bg-gray-100 hover:bg-blue-100 text-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
-                            <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <a href="https://github.com/navindusankalpa" class="bg-gray-100 hover:bg-gray-200 text-gray-800 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="bg-gray-100 hover:bg-pink-100 text-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                            <a href="https://instagram.com/navindu.karunarathne/" class="bg-gray-100 hover:bg-pink-100 text-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </div>
@@ -655,16 +712,16 @@
                     <p class="text-gray-400 mt-2">Data Science Student | Aspiring Software Engineer</p>
                 </div>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <a href="https://linkedin.com/in/navindu-karunarathne-707250216" class="text-gray-400 hover:text-white transition duration-300">
                         <i class="fab fa-linkedin-in text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <a href="https://github.com/navindusankalpa" class="text-gray-400 hover:text-white transition duration-300">
                         <i class="fab fa-github text-xl"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <a href="https://facebook.com/navindu.karunarathne/" class="text-gray-400 hover:text-white transition duration-300">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                    <a href="https://instagram.com/navindu.karunarathne/" class="text-gray-400 hover:text-white transition duration-300">
                         <i class="fab fa-instagram text-xl"></i>
                     </a>
                 </div>
@@ -674,7 +731,8 @@
                     <a href="#home" class="text-gray-400 hover:text-white text-sm mr-4">Home</a>
                     <a href="#about" class="text-gray-400 hover:text-white text-sm mr-4">About</a>
                     <a href="#projects" class="text-gray-400 hover:text-white text-sm mr-4">Projects</a>
-                    <a href="#contact" class="text-gray-400 hover:text-white text-sm">Contact</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white text-sm mr-4">Contact</a>
+                    <a href="/src/smartliving.html" class="text-gray-400 hover:text-white text-sm">SmartLiving</a>
                 </div>
             </div>
         </div>
@@ -799,8 +857,8 @@
 
                     emailjs.send('service_0rezb6c', 'template_d46i7vl', Object.fromEntries(formData))
                         .then(function() {
-                            alert('Message sent successfully!');
                             form.reset();
+                            window.location.href = "thankyou.html";
                         }, function(error) {
                             alert('Failed to send message. Please try again.');
                         });
