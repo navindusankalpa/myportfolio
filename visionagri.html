@@ -3,29 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VisionAgri AI - Plant Disease Detection System</title>
+    <title>VisionAgri AI // Computer Vision Framework</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Space+Mono&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        body {
+            background-color: #040807;
+            color: #cbd5e1;
+        }
         h1, h2, h3, h4, h5, h6 {
             font-family: "Lato", sans-serif;
+            letter-spacing: -0.025em;
         }
-        .hero-gradient {
-            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        .font-mono-tech {
+            font-family: "Space Mono", monospace;
         }
-        .card-hover {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .matrix-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(16, 185, 129, 0.02) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(16, 185, 129, 0.02) 1px, transparent 1px);
         }
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .cyber-border-green {
+            border: 1px solid rgba(16, 185, 129, 0.15);
+            background: rgba(6, 12, 10, 0.8);
+            backdrop-filter: blur(8px);
+        }
+        .cyber-border-green:hover {
+            border-color: rgba(52, 211, 153, 0.5);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+            transform: translateY(-2px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glow-green {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
         }
         .video-container {
             position: relative;
             padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
+            border: 1px solid rgba(16, 185, 129, 0.3);
         }
         .video-container iframe {
             position: absolute;
@@ -33,193 +51,179 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
         }
         .smooth-scroll {
             scroll-behavior: smooth;
         }
     </style>
 </head>
-<body class="bg-gray-50 smooth-scroll">
+<body class="smooth-scroll matrix-grid">
     <!-- Navigation -->
-    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+    <nav class="bg-[#050a08]/90 border-b border-emerald-500/20 backdrop-blur-md fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="flex-shrink-0 flex items-center">
-                        <span class="font-bold text-xl text-gray-800" style="font-family: 'Lato', sans-serif; color: #11998e;">VisionAgri AI</span>
-                    </div>
+                    <span class="font-mono-tech font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400 tracking-wider">
+                        // VISIONAGRI.ai
+                    </span>
                 </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="./index.html" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Home</a>
-                    <a href="#features" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Features</a>
-                    <a href="#demo" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Demo</a>
-                    <a href="#documentation" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">Documentation</a>
-                    <a href="#about" class="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition duration-300">About</a>
-                    <a href="https://visionagri.app" target="_blank" rel="noopener" class="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-green-700 transition duration-300">Launch App</a>
+                <div class="hidden md:flex items-center space-x-8 font-mono-tech text-xs tracking-widest">
+                    <a href="./index.html" class="text-gray-400 hover:text-emerald-400 transition">HOME</a>
+                    <a href="#features" class="text-gray-400 hover:text-emerald-400 transition">FEATURES</a>
+                    <a href="#demo" class="text-gray-400 hover:text-emerald-400 transition">INFERENCE_RUN</a>
+                    <a href="#documentation" class="text-gray-400 hover:text-emerald-400 transition">LOGS_V2</a>
+                    <a href="#about" class="text-gray-400 hover:text-emerald-400 transition">MODEL_SCOPE</a>
+                    <a href="https://visionagri.app" target="_blank" rel="noopener" class="bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 px-4 py-1.5 rounded hover:bg-emerald-600/40 transition">LAUNCH_APP</a>
                 </div>
                 <div class="md:hidden flex items-center">
-                    <button class="mobile-menu-button text-gray-700 hover:text-green-600 focus:outline-none focus:text-green-600">
+                    <button class="mobile-menu-button text-gray-400 hover:text-emerald-400 focus:outline-none">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile menu -->
-        <div class="mobile-menu hidden md:hidden">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
-                <a href="./index.html" class="block text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="#features" class="block text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-base font-medium">Features</a>
-                <a href="#demo" class="block text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-base font-medium">Demo</a>
-                <a href="#documentation" class="block text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-base font-medium">Documentation</a>
-                <a href="#about" class="block text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="https://visionagri.app" target="_blank" rel="noopener" class="block bg-green-600 text-white text-center px-3 py-2 rounded-md text-base font-medium mt-2">Launch App</a>
+        <div class="mobile-menu hidden md:hidden bg-[#050907] border-b border-emerald-500/20 font-mono-tech text-xs">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="./index.html" class="block text-gray-300 hover:text-emerald-400 px-3 py-2">HOME</a>
+                <a href="#features" class="block text-gray-300 hover:text-emerald-400 px-3 py-2">FEATURES</a>
+                <a href="#demo" class="block text-gray-300 hover:text-emerald-400 px-3 py-2">INFERENCE_RUN</a>
+                <a href="#documentation" class="block text-gray-300 hover:text-emerald-400 px-3 py-2">LOGS_V2</a>
+                <a href="#about" class="block text-gray-300 hover:text-emerald-400 px-3 py-2">MODEL_SCOPE</a>
+                <a href="https://visionagri.app" target="_blank" rel="noopener" class="block text-center text-emerald-400 bg-emerald-950/40 border border-emerald-500/30 py-2 rounded mt-2">LAUNCH_APP</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-gradient text-white pt-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">VisionAgri AI</h1>
-                <p class="text-xl md:text-2xl mb-8 text-green-100">AI-Powered Plant Disease Detection & Severity Quantification</p>
-                <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto text-green-50">
-                    An advanced deep learning framework designed to empower smart agriculture by automatically detecting foliage infections and accurately calculating affected surface areas in real time.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://visionagri.app" target="_blank" rel="noopener" class="bg-white text-green-700 px-8 py-3 rounded-full font-semibold hover:bg-green-50 transition duration-300 shadow-lg">
-                        <i class="fas fa-external-link-alt mr-2"></i>Visit Live Application
-                    </a>
-                    <a href="#demo" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-700 transition duration-300">
-                        <i class="fas fa-play mr-2"></i>Watch Demo
-                    </a>
-                </div>
+    <section id="home" class="pt-32 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-emerald-950/20 via-transparent to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <span class="font-mono-tech text-xs text-emerald-400 uppercase tracking-widest bg-emerald-950/40 border border-emerald-500/30 px-3 py-1 rounded">
+                Neural Leaf Segmentation Pipeline
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black text-white mt-6 mb-4 tracking-tight">
+                VISION<span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">AGRI_AI</span>
+            </h1>
+            <p class="text-lg md:text-xl font-mono-tech text-gray-400 mb-8 max-w-3xl mx-auto">
+                Multi-task deep learning structures identifying plant infection matrices and calculating damaged surface area percentages instantly.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center font-mono-tech text-xs tracking-wider">
+                <a href="https://visionagri.app" target="_blank" rel="noopener" class="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-3 rounded hover:from-emerald-500 hover:to-teal-500 transition shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                    <i class="fas fa-external-link-alt mr-2"></i>CONNECT_LIVE_SERVER
+                </a>
+                <a href="#demo" class="border border-emerald-500/30 text-emerald-300 bg-emerald-950/20 px-8 py-3 rounded hover:bg-emerald-900/20 transition">
+                    <i class="fas fa-play mr-2"></i>WATCH_INFERENCE_PIPELINE
+                </a>
             </div>
         </div>
-        <div class="w-full h-16 bg-gray-50 transform -skew-y-1 translate-y-8"></div>
     </section>
 
-    <!-- Abstract Section -->
-    <section class="py-20 bg-white">
+    <!-- Abstract Overview Block -->
+    <section class="py-12 border-y border-emerald-950/50 bg-[#050907]/40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Project Abstract</h2>
-                <p class="text-lg md:text-xl text-gray-600">
-                    VisionAgri AI is a web-based diagnostic platform for smallholder farmers that classifies chili pepper and tomato leaf diseases, quantifies infection severity, and delivers context-aware guidance through a production-ready cloud deployment.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
-                    <div class="text-green-600 text-3xl mb-4"><i class="fas fa-brain"></i></div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">EfficientNetV2-B0</h3>
-                    <p class="text-gray-600 text-sm">Achieved 100% validation accuracy and a 0.9684 Dice coefficient for high-confidence diagnosis.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 font-mono-tech text-xs">
+                <div class="bg-black/30 p-6 border border-emerald-950 rounded">
+                    <div class="text-emerald-400 text-lg mb-2"><i class="fas fa-microchip"></i> EfficientNetV2-B0</div>
+                    <p class="text-gray-500 text-[11px] font-sans leading-relaxed">Handles core high-confidence multiclass disease identification profiles across dense input channels.</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
-                    <div class="text-blue-600 text-3xl mb-4"><i class="fas fa-vector-square"></i></div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">MobileNetV3-Small</h3>
-                    <p class="text-gray-600 text-sm">Provides a lightweight segmentation alternative for pixel-level infection mapping.</p>
+                <div class="bg-black/30 p-6 border border-emerald-950 rounded">
+                    <div class="text-emerald-400 text-lg mb-2"><i class="fas fa-project-diagram"></i> U-Net Backbone</div>
+                    <p class="text-gray-500 text-[11px] font-sans leading-relaxed">Executes raw geometric target parsing to calculate precise edge degradation boundaries.</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
-                    <div class="text-yellow-600 text-3xl mb-4"><i class="fas fa-shield-alt"></i></div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Gatekeeper Filter</h3>
-                    <p class="text-gray-600 text-sm">A MobileNetV2-based classifier rejects out-of-scope uploads before inference.</p>
+                <div class="bg-black/30 p-6 border border-emerald-950 rounded">
+                    <div class="text-emerald-400 text-lg mb-2"><i class="fas fa-filter"></i> Gatekeeper System</div>
+                    <p class="text-gray-500 text-[11px] font-sans leading-relaxed">MobileNetV2 anomaly filtering block dumps non-foliage dataset sub-queries before core forward passes.</p>
                 </div>
-                <div class="bg-gray-50 rounded-2xl p-6 shadow-lg card-hover">
-                    <div class="text-purple-600 text-3xl mb-4"><i class="fas fa-cloud"></i></div>
-                    <h3 class="text-lg font-bold text-gray-800 mb-2">Context-Aware Guidance</h3>
-                    <p class="text-gray-600 text-sm">Open-Meteo and OpenRouter add weather-aware treatment recommendations for field use.</p>
+                <div class="bg-black/30 p-6 border border-emerald-950 rounded">
+                    <div class="text-emerald-400 text-lg mb-2"><i class="fas fa-cloud-sun"></i> Context Synthesizer</div>
+                    <p class="text-gray-500 text-[11px] font-sans leading-relaxed">Integrates real-time weather streams with LLM analysis targets to structure defensive field tips.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 bg-gray-50">
+    <section id="features" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Core Architecture & Features</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Engineered with state-of-the-art computer vision algorithms to ensure rapid diagnostic turnarounds and reliable accuracy.
-                </p>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">FRAMEWORK_SPECS</h2>
+                <div class="h-0.5 w-16 bg-emerald-500 mx-auto mb-4 shadow-[0_0_8px_#10b981]"></div>
+                <p class="text-gray-400 font-mono-tech text-xs tracking-wider">MODEL TOPOLOGY AND OPERATIONS MATRIX</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-brain text-2xl text-green-600"></i>
+                <div class="cyber-border-green p-8 rounded shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-950/40 border border-emerald-500/30 rounded flex items-center justify-center mb-6 text-emerald-400">
+                        <i class="fas fa-brain text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">EfficientNetV2 Classification</h3>
-                    <p class="text-gray-600">Utilizes highly tuned backbones to recognize early-stage crop infections across multiple plant species instantly.</p>
+                    <h3 class="text-lg font-bold text-white mb-3 font-mono-tech">// EFFICIENTNET_CLASSIFIER</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Maintains excellent parameter-to-accuracy ratios to classify leaf symptoms safely over dynamic lightning variables.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-bezier-curve text-2xl text-blue-600"></i>
+                <div class="cyber-border-green p-8 rounded shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-950/40 border border-emerald-500/30 rounded flex items-center justify-center mb-6 text-emerald-400">
+                        <i class="fas fa-bezier-curve text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">U-Net Pixel Segmentation</h3>
-                    <p class="text-gray-600">Isolates precise leaf lesions down to individual pixels, ensuring detailed and granular infection mapping.</p>
+                    <h3 class="text-lg font-bold text-white mb-3 font-mono-tech">// PIXEL_MASK_GENERATION</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Maps structural lesion layers down to specific pixel nodes, tracking infection clusters seamlessly across multi-leaf environments.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-percentage text-2xl text-yellow-600"></i>
+                <div class="cyber-border-green p-8 rounded shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-950/40 border border-emerald-500/30 rounded flex items-center justify-center mb-6 text-emerald-400">
+                        <i class="fas fa-percentage text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Severity Quantification</h3>
-                    <p class="text-gray-600">Computes the exact mathematical ratio of damaged vs. healthy leaf tissue to gauge exact disease progression levels.</p>
+                    <h3 class="text-lg font-bold text-white mb-3 font-mono-tech">// RATIO_QUANTIFICATION</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Calculates exact mathematical areas of necrotized leaf fields against healthy bounds to compute real-time structural scores.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-docker text-2xl text-purple-600"></i>
+                <div class="cyber-border-green p-8 rounded shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-950/40 border border-emerald-500/30 rounded flex items-center justify-center mb-6 text-emerald-400">
+                        <i class="fas fa-server text-2xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Containerized Cloud Stack</h3>
-                    <p class="text-gray-600">Built using Docker containers managed under Nginx reverse proxies, establishing robust cloud platform stability.</p>
+                    <h3 class="text-lg font-bold text-white mb-3 font-mono-tech">// CONTAINERIZED_STACK</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Built entirely inside lightweight isolated images managed by unified network reverse proxies for secure hosting.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-tags text-2xl text-red-600"></i>
+                <div class="cyber-border-green p-8 rounded shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-950/40 border border-emerald-500/30 rounded flex items-center justify-center mb-6 text-emerald-400">
+                        <i class="fas fa-tags text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Rigorous Annotation</h3>
-                    <p class="text-gray-600">Trained on thousands of precision-vetted samples prepared via structural annotation nodes for unmatched fidelity.</p>
+                    <h3 class="text-lg font-bold text-white mb-3 font-mono-tech">// REFINED_ANNOTATION</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Constructed over rigorous data cleanup protocols to eliminate label drift and minimize model divergence issues.</p>
                 </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg card-hover">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-bolt text-2xl text-indigo-600"></i>
+                <div class="cyber-border-green p-8 rounded shadow-lg transition duration-300">
+                    <div class="w-12 h-12 bg-emerald-950/40 border border-emerald-500/30 rounded flex items-center justify-center mb-6 text-emerald-400">
+                        <i class="fas fa-bolt text-xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Instant Web Diagnostics</h3>
-                    <p class="text-gray-600">Enables dynamic user image drag-and-drops for immediate UI mask readouts and predictive analytical profiles.</p>
+                    <h3 class="text-lg font-bold text-white mb-3 font-mono-tech">// WEB_INFERENCE_ENGINE</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Allows instant user image drag-and-drops for immediate UI mask readouts and predictive analytical profiles.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Demo Video Section -->
-    <section id="demo" class="py-20 bg-white">
+    <section id="demo" class="py-20 bg-[#030605]/70 border-y border-emerald-950/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">System Demonstration</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    See the inference pipeline map lesion boundaries dynamically through the web interface.
-                </p>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">LIVE_INFERENCE_STREAM</h2>
+                <p class="text-gray-400 font-mono-tech text-xs tracking-wider">PIPELINE ITERATION WALK-THROUGH AND METRIC LOGS</p>
             </div>
             <div class="max-w-4xl mx-auto">
-                <div class="bg-gray-100 rounded-2xl p-8 shadow-xl">
-                    <div class="video-container rounded-xl overflow-hidden">
-                        <!-- Replace with your actual video URL -->
+                <div class="bg-[#070c0a] border border-emerald-500/20 rounded-xl p-6 glow-green">
+                    <div class="video-container rounded">
                         <iframe 
                             src="https://1drv.ms/v/c/ddefe06bc76f925f/IQQhhEisp4OnQqUPKEN3f3ACAYrRmh123HFJVXXjuKKUxKk?width=1920&height=1080" 
-                            title="SmartLiving Demo Video"
+                            title="VisionAgri AI Demo Stream"
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen
-                            class="rounded-xl">
+                            allowfullscreen>
                         </iframe>
                     </div>
-                    <div class="mt-6 text-center">
-                        <p class="text-gray-600 mb-4">
-                            This video walk-through highlights the structural validation of model queries, deployment pipelines via Nginx configurations, and live client response processing.
-                        <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-                            <span><i class="fas fa-clock mr-1"></i>Duration: 14:08</span>
-                            <span><i class="fas fa-calendar mr-1"></i>Recorded: April 2026</span>
-                            <span><i class="fas fa-eye mr-1"></i>Full HD Quality</span>
-                            
+                    <div class="mt-6 font-mono-tech text-xs text-gray-400 space-y-2">
+                        <p class="text-sm text-gray-300 font-sans leading-relaxed">
+                            Full runtime audit showing image preprocessing sequences, asynchronous API processing execution speeds, and UI target classification rendering.
+                        </p>
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 pt-4 text-[11px] text-emerald-400 border-t border-emerald-950">
+                            <span><i class="fas fa-clock mr-1"></i>DURATION: 14:08</span>
+                            <span><i class="fas fa-calendar mr-1"></i>RECORDED: APRIL 2026</span>
+                            <span><i class="fas fa-video mr-1"></i>RESOLUTION: 1080P_HD</span>
                         </div>
                     </div>
                 </div>
@@ -228,56 +232,37 @@
     </section>
 
     <!-- Documentation Section -->
-    <section id="documentation" class="py-20 bg-gray-50">
+    <section id="documentation" class="py-20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Project Documentation</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Deep technical research, loss-curve progression logs, and architectural infrastructure plans.
-                </p>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">MODEL_DOCUMENTATION</h2>
+                <p class="text-gray-400 font-mono-tech text-xs tracking-wider">TRAINING RUN PARAMETERS, WEIGHT LOGS, AND CONFUSION MATRICES</p>
             </div>
             <div class="max-w-4xl mx-auto">
-                <div class="bg-white rounded-2xl shadow-xl p-8">
+                <div class="bg-[#070c0a] border border-emerald-500/20 rounded-xl shadow-2xl p-8">
                     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                        <div>
-                            <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-6 mx-auto lg:mx-0">
-                                <i class="fas fa-file-invoice text-4xl text-green-600"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center lg:text-left">Research & Technical Report</h3>
-                            <p class="text-gray-600 mb-6 text-center lg:text-left">
-                                Comprehensive analysis outlining model design, optimization functions, validation evaluation matrix performance, and distributed microservices deployment configurations.
-                            </p>
-                            <div class="space-y-3 mb-8">
-                                <div class="flex items-center justify-center lg:justify-start text-gray-700">
-                                    <i class="fas fa-layer-group w-5 mr-3 text-gray-500"></i>
-                                    <span>Model Layer Blueprints & Hyperparameters</span>
-                                </div>
-                                <div class="flex items-center justify-center lg:justify-start text-gray-700">
-                                    <i class="fas fa-chart-line w-5 mr-3 text-gray-500"></i>
-                                    <span>Accuracy & F1-Score Evaluations</span>
-                                </div>
-                                <div class="flex items-center justify-center lg:justify-start text-gray-700">
-                                    <i class="fas fa-network-wired w-5 mr-3 text-gray-500"></i>
-                                    <span>Nginx & Container Ecosystem Architecture</span>
+                        <div class="flex flex-col justify-between">
+                            <div>
+                                <span class="font-mono-tech text-[10px] bg-emerald-950/60 border border-emerald-500/40 text-emerald-400 px-2 py-0.5 rounded tracking-widest">
+                                    CORE_REPORT.pdf
+                                </span>
+                                <h3 class="text-2xl font-black text-white mt-4 mb-4">Architecture & Training Records</h3>
+                                <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                    In-depth technical breakdown containing loss optimization weights, evaluation matrix profiles, layer connection mappings, and microservice container layout configurations.
+                                </p>
+                                <div class="space-y-3 font-mono-tech text-xs text-gray-400 mb-8">
+                                    <div class="flex items-center"><i class="fas fa-layer-group w-6 text-emerald-400"></i><span>Layer blueprints & hyperparameters</span></div>
+                                    <div class="flex items-center"><i class="fas fa-chart-line w-6 text-emerald-400"></i><span>Accuracy & F1-score evaluation trends</span></div>
+                                    <div class="flex items-center"><i class="fas fa-network-wired w-6 text-emerald-400"></i><span>Nginx reverse proxy routing profiles</span></div>
                                 </div>
                             </div>
-                            <div class="text-center lg:text-left">
-                                <!-- Replace link path below when document cloud setup completes -->
-                                <a href="./src/visionagri.pdf" target="_blank" class="inline-flex items-center bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition duration-300">
-                                    <i class="fas fa-cloud-download-alt mr-2"></i>
-                                    Access Document
-                                </a>
-                            </div>
+                            <a href="./src/visionagri.pdf" target="_blank" class="inline-flex items-center justify-center font-mono-tech text-xs tracking-wider bg-emerald-600 text-white px-6 py-3 rounded hover:bg-emerald-500 transition shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+                                <i class="fas fa-file-pdf mr-2"></i>ACCESS_TECHNICAL_REPORT
+                            </a>
                         </div>
                         <div>
-                            <div class="bg-gray-100 rounded-xl h-96 flex items-center justify-center overflow-hidden">
-                                <!-- Swap src with your cloud document url or local relative PDF route if available -->
-                                <iframe 
-                                    src="./src/visionagri.pdf" 
-                                    width="100%" 
-                                    height="100%" 
-                                    style="border-radius: 0.75rem; box-shadow: 0 0 40px 0 rgba(0,0,0,0.1); border: 1px solid #e5e7eb;">
-                                </iframe>
+                            <div class="bg-black/40 border border-emerald-950 rounded h-96 overflow-hidden relative">
+                                <iframe src="./src/visionagri.pdf" width="100%" height="100%" class="opacity-80"></iframe>
                             </div>
                         </div>
                     </div>
@@ -287,59 +272,54 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20 bg-[#030504]/70 border-t border-emerald-950/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About This Project</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    A production-oriented diagnostic system built for resource-constrained agricultural settings.
-                </p>
+                <h2 class="text-3xl md:text-4xl font-black text-white mb-2 tracking-tight">SYSTEM_BACKGROUND</h2>
+                <p class="text-gray-400 font-mono-tech text-xs tracking-wider">DATA SPLITS AND SYSTEM SPECS</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Project Overview</h3>
-                    <p class="text-gray-600 mb-6">
-                        VisionAgri AI combines multi-task deep learning with cloud deployment to classify diseases and quantify infection severity in chili pepper and tomato leaves. The system pairs an EfficientNetV2-B0 backbone with a lightweight MobileNetV3-Small segmentation alternative, while a MobileNetV2 gatekeeper filters out-of-scope uploads before inference.
+                    <h3 class="text-2xl font-black text-white mb-4">Deep Convolutional Logic Stack</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        VisionAgri AI combines structured multi-task neural network layouts to automate foliage diagnostics. By managing unified preprocessing blocks, the web framework quickly processes uploads, routes data through validation stages, and drops pixel masks directly back to client browsers.
                     </p>
-                    <p class="text-gray-600 mb-6">
-                        Context-aware recommendations are generated by integrating the Open-Meteo weather API and an OpenRouter-hosted large language model, and the full stack is containerized with Docker on visionagri.app to support practical use in low-resource farming environments.
-                    </p>
-                    <div class="space-y-4 mb-8">
+                    <div class="space-y-4 font-mono-tech text-xs text-gray-400">
                         <div class="flex items-start">
-                            <div class="w-2 h-2 bg-green-600 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                            <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 mr-3 shadow-[0_0_5px_#10b981]"></div>
                             <div>
-                                <h4 class="font-semibold text-gray-800">Stack & Infrastructure</h4>
-                                <p class="text-gray-600 text-sm">Python, PyTorch, Docker, Nginx, Linux Cloud Instance, Tailored Web Interface.</p>
+                                <h4 class="font-bold text-white text-sm">INFRASTRUCTURE_TREES</h4>
+                                <p class="text-gray-500 text-[11px] mt-0.5">PyTorch Framework, Docker Ecosystems, Nginx Proxy Nodes, Asynchronous Server Endpoints.</p>
                             </div>
                         </div>
                         <div class="flex items-start">
-                            <div class="w-2 h-2 bg-green-600 rounded-full mt-3 mr-4 flex-shrink-0"></div>
+                            <div class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2 mr-3 shadow-[0_0_5px_#10b981]"></div>
                             <div>
-                                <h4 class="font-semibold text-gray-800">Focus Core</h4>
-                                <p class="text-gray-600 text-sm">Semantic Segmentation, Multi-class Classification, Computer Vision Optimization Pipelines.</p>
+                                <h4 class="font-bold text-white text-sm">CORE_FOCUS_MATRIX</h4>
+                                <p class="text-gray-500 text-[11px] mt-0.5">Semantic Mask Generation, Multi-Class Inference, Dense Output Arrays.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <div class="bg-gray-100 rounded-2xl p-8">
-                        <h3 class="text-xl font-bold text-gray-800 mb-6 text-center">Dataset Profile & Balance</h3>
+                    <div class="bg-[#070c0a] border border-emerald-500/20 rounded-xl p-8 font-mono-tech">
+                        <h3 class="text-sm font-bold text-white mb-6 text-center text-emerald-400">// TRAINING_DATA_SPLIT_MAP</h3>
                         <div class="grid grid-cols-3 gap-4">
-                            <div class="text-center bg-white p-4 rounded-xl shadow-sm">
-                                <div class="text-xl font-bold text-green-600 mb-1">14,440</div>
-                                <div class="text-gray-500 text-xs font-medium uppercase tracking-wider">Train Images</div>
+                            <div class="bg-black/40 p-4 border border-emerald-950 rounded text-center">
+                                <div class="text-xl font-black text-white tracking-tight">14,440</div>
+                                <div class="text-gray-500 text-[9px] uppercase mt-1">TRAIN_IMG</div>
                             </div>
-                            <div class="text-center bg-white p-4 rounded-xl shadow-sm">
-                                <div class="text-xl font-bold text-blue-600 mb-1">3,089</div>
-                                <div class="text-gray-500 text-xs font-medium uppercase tracking-wider">Val Images</div>
+                            <div class="bg-black/40 p-4 border border-emerald-950 rounded text-center">
+                                <div class="text-xl font-black text-emerald-400 tracking-tight">3,089</div>
+                                <div class="text-gray-500 text-[9px] uppercase mt-1">VAL_IMG</div>
                             </div>
-                            <div class="text-center bg-white p-4 rounded-xl shadow-sm">
-                                <div class="text-xl font-bold text-purple-600 mb-1">3,109</div>
-                                <div class="text-gray-500 text-xs font-medium uppercase tracking-wider">Test Images</div>
+                            <div class="bg-black/40 p-4 border border-emerald-950 rounded text-center">
+                                <div class="text-xl font-black text-teal-400 tracking-tight">3,109</div>
+                                <div class="text-gray-500 text-[9px] uppercase mt-1">TEST_IMG</div>
                             </div>
                         </div>
-                        <div class="mt-6 text-center text-xs text-gray-400 font-mono">
-                            Vetted and structured via manual review nodes
+                        <div class="mt-6 text-center text-[10px] text-gray-600 uppercase tracking-widest border-t border-emerald-950/60 pt-4">
+                            Verified via isolated structural annotation nodes.
                         </div>
                     </div>
                 </div>
@@ -348,47 +328,43 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="bg-[#030504] border-t border-emerald-950/80 text-gray-500 py-12 font-mono-tech text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-seedling text-2xl text-green-400 mr-2"></i>
-                        <span class="font-bold text-xl" style="font-family: 'Lato', sans-serif;">VisionAgri AI</span>
+                    <div class="flex items-center text-white font-bold mb-4">
+                        <i class="fas fa-seedling text-emerald-400 mr-2 text-base"></i>
+                        <span class="tracking-wider text-sm">// VISIONAGRI Core Engine</span>
                     </div>
-                    <p class="text-gray-300 mb-4">
-                        Deep learning infrastructure framework delivering accelerated foliage analysis metrics.
+                    <p class="text-gray-500 text-[11px] leading-relaxed">
+                        Distributed convolutional framework pipelines optimizing modern vision classification targets.
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-bold text-lg mb-4" style="font-family: 'Lato', sans-serif;">Quick Links</h4>
-                    <div class="space-y-2">                        
-                        <a href="./index.html" class="block text-gray-300 hover:text-white transition duration-300">Home</a>
-                        <a href="#features" class="block text-gray-300 hover:text-white transition duration-300">Features</a>
-                        <a href="#demo" class="block text-gray-300 hover:text-white transition duration-300">System Demo</a>
-                        <a href="#documentation" class="block text-gray-300 hover:text-white transition duration-300">Documentation</a>
-                        <a href="https://visionagri.app" target="_blank" rel="noopener" class="block text-green-400 hover:underline font-semibold">Live System Site →</a>
+                    <h4 class="text-white font-bold mb-4 text-xs tracking-widest">// SYSTEM_ROUTES</h4>
+                    <div class="space-y-2 text-[11px]">                        
+                        <a href="./index.html" class="block text-gray-500 hover:text-emerald-400 transition">./index.html</a>
+                        <a href="#features" class="block text-gray-500 hover:text-emerald-400 transition">#framework_specs</a>
+                        <a href="#demo" class="block text-gray-500 hover:text-emerald-400 transition">#inference_stream</a>
+                        <a href="https://visionagri.app" target="_blank" rel="noopener" class="block text-emerald-400 hover:underline">#live_application_node →</a>
                     </div>
                 </div>
                 <div>
-                    <h4 class="font-bold text-lg mb-4" style="font-family: 'Lato', sans-serif;">Contact Connect</h4>
-                    <div class="space-y-2">
-                        <p class="text-gray-300"><i class="fas fa-envelope mr-2"></i>
-                            <a href="mailto:navindukarunarathne1@gmail.com" class="hover:underline">navindukarunarathne1@gmail.com</a>
-                        </p>
-                        <a href="https://github.com/navindusankalpa" class="block text-gray-300 hover:text-white"><i class="fab fa-github mr-2"></i>GitHub</a>
-                        <a href="https://www.linkedin.com/in/navindu-karunarathne-707250216/" class="block text-gray-300 hover:text-white"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a>
+                    <h4 class="text-white font-bold mb-4 text-xs tracking-widest">// SECURE_UPLINKS</h4>
+                    <div class="space-y-2 text-[11px]">
+                        <p><i class="fas fa-envelope mr-2 text-emerald-500"></i><a href="mailto:navindukarunarathne1@gmail.com" class="hover:text-emerald-400">navindukarunarathne1@gmail.com</a></p>
+                        <p><i class="fab fa-github mr-2 text-emerald-500"></i><a href="https://github.com/navindusankalpa" class="hover:text-emerald-400">github/navindusankalpa</a></p>
+                        <p><i class="fab fa-linkedin mr-2 text-emerald-500"></i><a href="https://www.linkedin.com/in/navindu-karunarathne-707250216/" class="hover:text-emerald-400">linkedin/navindu-karunarathne</a></p>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-300">&copy; <span id="year"></span> VisionAgri AI Core Operations Framework.</p>
+            <div class="border-t border-emerald-950/40 mt-8 pt-8 text-center text-[10px] text-gray-600">
+                &copy; <span id="year"></span> VISIONAGRI PIPELINE INFRASTRUCTURE. ALL NEURAL NODES FUNCTIONAL.
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle logic
         const mobileMenuButton = document.querySelector('.mobile-menu-button');
         const mobileMenu = document.querySelector('.mobile-menu');
 
@@ -398,7 +374,6 @@
 
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Smooth scrolling for page anchors
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -413,23 +388,21 @@
             });
         });
 
-        // Dynamic element navbar track scroll highlighting
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('nav a[href^="#"]');
             
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= (sectionTop - 200)) {
+                if (scrollY >= (section.offsetTop - 200)) {
                     current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(link => {
-                link.classList.remove('text-green-600');
+                link.classList.remove('text-emerald-400');
                 if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('text-green-600');
+                    link.classList.add('text-emerald-400');
                 }
             });
         });
